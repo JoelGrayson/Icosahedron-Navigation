@@ -1,20 +1,14 @@
----
-author:
-- Joel Grayson & Nathaniel Thornell
-date: July 3, 2022
-title: Icosahedron Navigation
----
+# Icosahedron Navigation
+By Joel Grayson & Nathaniel Thornell 
+July 3, 2022
 
-# Problem
-
+## Problem
 This problem is derived from [Jane Street's sample problem for the 2022
-International Math Olympiad
-(janestreet.com/imo2022)](https://www.janestreet.com/imo2022/).
+International Math Olympiad](https://www.janestreet.com/imo2022/).
 
-# Solutions
+## Solutions
 
-## Method 1
-
+### Method 1
 Method 1 involves marking the starting vertex red. Then, we move to the
 next vertex and mark it orange as part of the second layer. Layers are
 sets of vertices that are equidistant from the starting vertex. We then
@@ -26,10 +20,9 @@ placed five orange markers, we move on to placing green markers on the
 third layer. After marking the three layers, navigate to the vertex
 without a marker. That unmarked vertex is opposite the red vertex.
 
-![image](model1.jpg){width="3cm"}
+<img src='./LaTeX%20explanation/images/model1.jpg' width='100px'>
 
-## Method 2
-
+### Method 2
 Method 2 is method 1, but with additional rules that save three markers.
 Since there are an infinite number of colors, we can associate each
 different color with a meaning. First, we mark the starting spot with a
@@ -48,10 +41,9 @@ vertex) to the vertex next to 3-middle on the third layer that is not
 We go to 3-middle and move once. If that vertex is empty, it is the
 opposite side. If not, move back to 3-middle and repeat.
 
-![image](model2.jpg){width="3cm"}
+<img src='./LaTeX%20explanation/images/model2.jpg' width='100px'>
 
-## Method 3
-
+### Method 3
 Mark the starting vertex red. Move three times and mark that vertex
 green. Then, go back and forth between the red and green vertices a
 large number of times. If we did not ever travel between the two
@@ -63,9 +55,9 @@ accuracy that you ended up at the opposite vertex. In theory, you would
 need to go back and forth an infinite number of times to verify for
 certain. For this reason, we do not consider this solution valid.
 
-![image](model3.jpg){width="3cm"}
+<img src='./LaTeX%20explanation/images/model3.jpg' width='100px'>
 
-## Comparison
+### Comparison
 
 Each method has its own advantages:
 
@@ -83,7 +75,7 @@ Also, method 3 requires a huge number of moves for verification. The
 benefit is that it only needs two markers.
 
 Here are the average results of running each method 2000 times.
-
+```
     |-----------------------------------------------------------|
     |                          Results                          |
     |                    Method 1      Method 2     Method 3    |
@@ -92,3 +84,9 @@ Here are the average results of running each method 2000 times.
     | #Total markers  11            8            2              |
     | #Unique Markers 3             8            2              |
     |-----------------------------------------------------------|
+```
+
+## How to Run the Code
+Inside the icosahedron folder, Icosahedron.py has the Icosahedron class, which simulates an icosahedron and three capabilities you can do (move, view the marker at the current spot, and put down a marker on the current spot). SuperIcosahedron is a class that extends Icosahedron, adding extra capabilities based on the three methods such as go_to a marker and measuring analytics.
+
+The three methods (solutions) are located in the methods folder.
